@@ -12,22 +12,28 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background: #333;
 }
 
 h1 {
   font-size: 3.5rem;
+  color: #fff;
+  border-bottom: 5px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 h2 {
   font-size: 2.5rem;
+  color: #66a3ff;
 }
 
 .text-center {
   text-align: center;
 }
 
-.pb-50 {
-  padding-bottom: 50px;
+.pb-30 {
+  padding-bottom: 30px;
 }
 
 .square {
@@ -42,7 +48,7 @@ h2 {
 .square span {
   position: absolute;
   inset: 0;
-  border: 2px solid #333;
+  border: 2px solid #fff;
   opacity: 0.5;
 }
 
@@ -122,7 +128,7 @@ h2 {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 100px;
+  height: 130px;
   background: #66a3ff;
   display: flex;
   justify-content: center;
@@ -179,4 +185,140 @@ h2 {
   100% {
     background-position-x: 1000px;
   }
+}
+
+.icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  cursor: pointer;
+  gap: 50px;
+}
+
+.icon .imgBx {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: 0.5s;
+  box-shadow: 0 0 0 4px #fff;
+  opacity: 0.5;
+}
+
+.icon .imgBx.active {
+  opacity: 1;
+  scale: 1.2;
+  box-shadow: 0 0 0 4px #fff, 0 0 0 10px #66a3ff, 0 0 0 12px #fff;
+  margin: 0 10px;
+}
+
+.icon .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contentBx {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  transform: scale(0);
+  opacity: 0;
+}
+
+.contentBx.active {
+  transform: scale(1);
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+
+.contentBx .card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contentBx .card .imgBx {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.contentBx .card .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.contentBx .card .textBx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contentBx .card .textBx h3,
+.contentBx .card .textBx h4 {
+  position: relative;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1rem;
+  text-transform: uppercase;
+}
+
+.contentBx .card .textBx h4 {
+  font-size: 0.8rem;
+  padding-top: 10px;
+  font-weight: 300;
+  letter-spacing: 0.3rem;
+}
+
+.contentBx .card .social {
+  position: relative;
+  display: flex;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.contentBx .card .social li {
+  list-style: none;
+}
+
+.contentBx .card .social li a {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #66a3ff;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+.contentBx .card .social li a:hover {
+  scale: 1.1;
+  background: #fff;
+  color: #66a3ff;
 }
